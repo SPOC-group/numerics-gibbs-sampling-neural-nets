@@ -1,0 +1,31 @@
+#Input files instructions:
+#every numerical value must be preceded and followed by one space (these are used for parsing)
+#do not change the order of the inputs and don't add or remove lines in the input file. Do not modify anything beyond the numerical values
+seed_teacher= 19 #seed for random teacher initialization
+seed_noise_dataset= 10000 #controls the input's (X) generation and the noise that is injected in the training set
+seed_student= 20000 #seed for the random student initialization
+seed_MCMC= 30000 #seed for randomness in the MCMC
+tmax= 300000 #maximum number of time steps of the MCMC
+number_measurements= 6000 #number of measurements along the simulation
+t_thermalization= 250000 #time after which samples are assumed to come from the posterior. The BO estimator is based on samples after t_thermalization.
+initialization= zero #'zero', 'random', 'random_consistent', 'informed'
+n_train= 60000 #training samples
+n_test= 5000 #test samples
+H_X= 28 #input height
+W_X= 28 #input width
+C_X= 1 #number of input channels
+C_Z= 2 #number of channels after the first convolution
+H_W= 4 #convolution filter height
+W_W= 4 #convolution filter width
+s_y= 2 #convolution vertical stride
+s_x= 2 #convolution horizontal stride
+H_P= 2 #pooling filter height
+W_P= 2 #pooling filter width
+C= 10 #number of output classes
+Delta= 100 #noise variance (homogeneous for all layers, and same between teacher and student)
+lambda_W= 16 # inverse precision of prior on convolutional filter
+lambda_W_2= 72 # inverse precision of prior on second layer weights
+lambda_b= 16 # inverse precision of prior on convolution bias
+lambda_b_2= 72 # inverse precision of prior on second layer bias
+inputs= external #'external' or 'gaussian'. Sets the type of input data
+labels= external # 'external' or 'teacher'. Sets the labels

@@ -1,0 +1,32 @@
+#Input files instructions:
+#every numerical value must be preceded and followed by one space (these are used for parsing)
+#do not change the order of the inputs and don't add or remove lines in the input file. Do not modify anything beyond the numerical values
+seed_teacher= 68 #seed for random teacher initialization
+seed_noise_dataset= 10068 #controls the input's (X) generation and the noise that is injected in the training set
+seed_student= 20068 #seed for the random student initialization
+seed_MCMC= 30068 #seed for randomness in the MCMC
+initialization= informed #'zero', 'random', 'random_consistent', 'informed'
+n_train= 2084 #training samples
+n_test= 2000 #test samples
+d= 50 #input dimension
+K_0= 10 #number of teacher hidden units
+K= 10 #number of student hidden units
+lambda_W_0= 50 #teacher first layer weights inverse variance
+lambda_W= 50 #student first layer weights inverse variance
+lambda_a_0= 10 #teacher second layer weights inverse variance
+lambda_a= 10 #student second layer weights inverse variance
+Delta_Z_0= 0 #teacher preactivations noise variance
+Delta_Z= 1e-03 #student preactivations noise variance
+Delta_Phi_0= 0 #teacher postactivations noise variance
+Delta_Phi= 1e-03 #student postactivations noise variance
+Delta_y_0= 0 #teacher label noise variance
+Delta_y= 1e-03 #student label noise variance
+teacher_activation= ReLU #teacher first layer nonlinearity: 'ReLU', 'sign'
+student_activation= ReLU #student first layer nonlinearity: 'ReLU', 'sign'
+tmax= 2500000 #maximum number of time steps of the MCMC
+number_measurements= 7500 #number of measurements along the simulation
+t_thermalization= 2300000 #time after which samples are assumed to come from the posterior. The BO estimator is based on samples after t_thermalization.
+lambda_b_W_0= 50 #inverse variance of the first layer biases of the teacher
+lambda_b_W= 50 #inverse variance of the first layer biases of the student
+lambda_b_a_0= 10 #inverse variance of the second layer biases of the teacher
+lambda_b_a= 10 #inverse variance of the first layer biases of the student
